@@ -11,7 +11,6 @@ export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -118,7 +117,7 @@ export function Login() {
             <span className="text-white text-xl font-bold block">
               QuiboTech
             </span>
-            <span className="text-orange-200 text-xs">HRMS Platform</span>
+            <span className="text-orange-200 text-xs">Admin Platform</span>
           </div>
         </div>
 
