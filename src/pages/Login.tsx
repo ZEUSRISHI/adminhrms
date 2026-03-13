@@ -55,10 +55,12 @@ export function Login() {
     >
       {/* LEFT PANEL */}
       <div
-        className="hidden lg:flex lg:w-[52%] flex-col justify-between p-14 relative overflow-hidden"
+        className="hidden lg:flex lg:w-[52%] flex-col justify-between p-14 relative overflow-hidden bg-cover bg-center"
         style={{
-          background:
-            "linear-gradient(150deg, #f97316 0%, #ea580c 45%, #b45309 100%)",
+          backgroundImage: `
+            linear-gradient(rgba(251,146,60,0.85), rgba(249,115,22,0.85)),
+            url("https://lh3.googleusercontent.com/aida-public/AB6AXuBEVCejuy6f5IDAb37S8UsWJinmafdXd9kSceUH_LGKRQHfjEe_CZYXedOTljpEByHQ26_QVGkF3Ds8ifxcydix6p2Oe7PzQLmn8XS0U50K-BuuF-8WPWw_S-yj0Oqxby-RxnRdiU4w1WyxRnRHLGiL330isJMnzNaWlHk7cIrLX5G3RaCpYqzzVScDOHIw1_2LmleW1w3--G4sS1kYwk20tSStbZcN7Fsj3ZTlZKAbP1tJSHeVC4Fv202NKiC_Kivo5GafnPWr7GU")
+          `,
         }}
       >
         {/* Decorative shapes */}
@@ -95,32 +97,6 @@ export function Login() {
           }}
         />
 
-        {/* Logo */}
-        <div className="relative z-10 flex items-center gap-3">
-          <div
-            className="w-11 h-11 flex items-center justify-center rounded-2xl"
-            style={{ background: "rgba(255,255,255,0.18)" }}
-          >
-            <svg
-              className="w-5 h-5 text-white"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-            >
-              <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
-            </svg>
-          </div>
-
-          <div>
-            <span className="text-white text-xl font-bold block">
-              QuiboTech
-            </span>
-            <span className="text-orange-200 text-xs">Admin Platform</span>
-          </div>
-        </div>
-
         {/* Main Heading */}
         <div className="relative z-10 flex items-center justify-center h-full text-center">
           <h1
@@ -128,20 +104,20 @@ export function Login() {
             style={{ fontSize: "clamp(32px, 3vw, 48px)" }}
           >
             Empowering the Future —<br />
-            <span style={{ color: "rgba(255,255,255,0.85)" }}>
+            <span style={{ color: "rgba(255,255,255,0.9)" }}>
               from Campus Desk to<br />
               Corporate Boardroom
             </span>
           </h1>
         </div>
 
-        <p className="relative z-10 text-xs text-white/50">
-          © {new Date().getFullYear()} QuiboTech · All rights reserved
+        <p className="relative z-10 text-xs text-white/70">
+          © {new Date().getFullYear()} All rights reserved
         </p>
       </div>
 
       {/* RIGHT PANEL */}
-      <div className="flex-1 flex flex-col items-center justify-center px-6 py-14 bg-gray-50">
+      <div className="flex-1 flex flex-col items-center justify-center px-6 py-14 bg-orange-50">
         <div className="w-full max-w-[420px] bg-white rounded-2xl border shadow-sm p-10">
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900">Sign in</h2>
@@ -168,7 +144,7 @@ export function Login() {
             <input
               type="email"
               placeholder="Email"
-              className="w-full border rounded-lg px-4 py-3"
+              className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -177,14 +153,14 @@ export function Login() {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
-                className="w-full border rounded-lg px-4 py-3 pr-10"
+                className="w-full border rounded-lg px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-orange-400"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
 
               <button
                 type="button"
-                className="absolute right-3 top-3"
+                className="absolute right-3 top-3 text-gray-500"
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -194,7 +170,7 @@ export function Login() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full text-white py-3 rounded-lg bg-orange-500 flex justify-center items-center gap-2"
+              className="w-full text-white py-3 rounded-lg bg-orange-500 hover:bg-orange-600 flex justify-center items-center gap-2"
             >
               {isLoading ? (
                 <>
